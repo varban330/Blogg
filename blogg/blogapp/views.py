@@ -40,7 +40,7 @@ class SAView(APIView):
 class TCView(APIView):
 
     def get(self,request):
-        dict = {'message':[c.title for c in categories]}
+        dict = {'message':[c.title() for c in categories]}
         return HttpResponse(json.dumps(dict), status=200)
 
     def post(self,request):

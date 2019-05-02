@@ -163,11 +163,22 @@
         <div class="modal-body">
           <form role="form">
             <div class="form-group">
+              <label for="t_method">Choose Request Method:</label>
+              <select id="t_method" class="form-control" onchange="textarea_t()">
+                <option class="opt" value="get" selected>Get</option>
+                <option class="opt" value="post">Post</option>
+              </select>
+            </div>
+            <div class="form-group" id="textarea_t_div">
               <label for="text_t">Enter Text you want to classify:</label>
               <textarea class="form-control" id="text_t" name="text" rows="3"></textarea>
             </div>
             <div class="text-center">
               <button type="button" class="btn btn-info my-4" onclick="textclass()">Run</button>
+            </div>
+            <div class="form-group" id="textarea_at_div">
+              <label for="textac">Categories:</label>
+              <textarea class="form-control" id="textac" name="text" rows="3"></textarea>
             </div>
             <div class="form-group mb-3" id="t_div">
               <label for="key">Category is: </label><br>
@@ -201,11 +212,22 @@
         <div class="modal-body">
           <form role="form">
             <div class="form-group">
+              <label for="s_method">Choose Request Method:</label>
+              <select id="s_method" class="form-control" onchange="textarea_s()">
+                <option class="opt" value="get" selected>Get</option>
+                <option class="opt" value="post">Post</option>
+              </select>
+            </div>
+            <div class="form-group" id="textarea_s_div">
               <label for="text_s">Enter Text</label>
               <textarea class="form-control" id="text_s" name="text" rows="3"></textarea>
             </div>
             <div class="text-center">
               <button type="button" class="btn btn-info my-4" onclick="sentiment()">Run</button>
+            </div>
+            <div class="form-group" id="textarea_as_div">
+              <label for="textacs">Sentiments:</label>
+              <textarea class="form-control" id="textacs" name="text" rows="3"></textarea>
             </div>
             <div class="form-group mb-3" id="s_div">
               <label for="sentiment">Sentiment is: </label><br>

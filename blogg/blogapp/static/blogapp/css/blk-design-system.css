@@ -20855,3 +20855,19 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 #s_div{
   display: none;
 }
+
+#textarea_t_div{
+  display: none;
+}
+
+#textarea_s_div{
+  display: none;
+}
+
+#textarea_at_div{
+  display: none;
+}
+
+#textarea_as_div{
+  display: none;
+}
