@@ -20,7 +20,7 @@ import blogapp.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.test, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^sentiment/$', views.SAView.as_view(), name="sentiment"),
     url(r'^text_class/$', views.TCView.as_view(), name="text-classification"),
     url(r'^register/$', views.RegisterView.as_view(), name="register"),

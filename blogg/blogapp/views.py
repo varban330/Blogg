@@ -9,8 +9,9 @@ from .functions import valid_keys, sentiment_analyser,textclassifier,generatekey
 categories = ['adventure','belles_lettres','editorial','fiction','government','hobbies','humor','learned','lore','mystery','news','religion','reviews','romance','science_fiction']
 # Create your views here.
 class IndexView(View):
+    template_name = "blogapp/Project.html"
     def get(self,request):
-        pass
+        return render(request, self.template_name)
 
 def test(request):
     return(HttpResponse("<h1>hello</h1>"))
@@ -26,7 +27,7 @@ class SAView(APIView):
             if request.META["HTTP_OCP_APIM_SUBSCRIPTION_KEY"] in api_keys:
                 text = request.data['text']
                 result = sentiment_analyser(text)
-                dict = {'message': result}
+                dict = {'message': result.title()}
                 return HttpResponse(json.dumps(dict), status=200)
             else:
                 dict = {'message': 'Invalid API Key Provided'}
@@ -39,7 +40,7 @@ class SAView(APIView):
 class TCView(APIView):
 
     def get(self,request):
-        dict = {'message':categories}
+        dict = {'message':[c.title for c in categories]}
         return HttpResponse(json.dumps(dict), status=200)
 
     def post(self,request):
@@ -48,7 +49,7 @@ class TCView(APIView):
             if request.META["HTTP_OCP_APIM_SUBSCRIPTION_KEY"] in api_keys:
                 text = request.data['text']
                 result = textclassifier(text)
-                dict = {'message': result}
+                dict = {'message': result.title()}
                 return HttpResponse(json.dumps(dict), status=200)
             else:
                 dict = {'message': 'Invalid API Key Provided'}
