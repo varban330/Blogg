@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include,url
+import blogapp.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^acc/', include('blogapp.urls')),
+    url(r'^$', views.test, name='index'),
+    url(r'^sentiment/$', views.SAView.as_view(), name="sentiment"),
+    url(r'^text_class/$', views.TCView.as_view(), name="text-classification"),
+    url(r'^register/$', views.RegisterView.as_view(), name="register"),
 ]
