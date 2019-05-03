@@ -32,8 +32,9 @@ class SAView(APIView):
             else:
                 dict = {'message': 'Invalid API Key Provided'}
                 return HttpResponse(json.dumps(dict), status=401)
-        except:
-            dict = {'message': 'No API Key Provided'}
+        except Exception as e:
+            string = "No API Key Provided"
+            dict = {'message': string }
             return HttpResponse(json.dumps(dict), status=401)
 
 
