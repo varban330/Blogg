@@ -8,7 +8,7 @@ django-six==1.0.4
 djangorestframework==3.9.3
 gunicorn==19.9.0
 nltk==3.4.1
-numpy==1.16.3
+numpy==1.22.0
 pandas==0.24.2
 python-dateutil==2.8.0
 pytz==2019.1
